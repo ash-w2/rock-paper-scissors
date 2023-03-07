@@ -10,9 +10,9 @@ function playRound() {
   const playerSelection = getPlayerChoice();
   const computerSelection = getComputerChoice();
 
-  if (computerSelection == "paper") {
-    console.log("You lost! Paper beats Rock!");
-  } else console.log("Wrong");
+  //if (computerSelection == "paper") {
+  //console.log("You lost! Paper beats Rock!");
+  //} else console.log("Wrong");
 }
 
 //get random choice from computer
@@ -23,14 +23,25 @@ function getComputerChoice() {
 //get choice from user
 function getPlayerChoice() {
   let userInput = prompt("Please choose rock, paper or scissors");
+  return userInput;
   //console.log(userInput);
 }
 
 //check who wins the round
 function checkWinner(choiceP, choiceC) {
-    if (choiceP == "rock" && choiceC == "scissors" || choiceP == "scissors" && choiceC == "paper" || choiceP == "paper" && choiceC == "rock") 
+  if (
+    (choiceP == "rock" && choiceC == "scissors") ||
+    (choiceP == "scissors" && choiceC == "paper") ||
+    (choiceP == "paper" && choiceC == "rock")
+  )
     console.log("Player, you win!!");
-};
+  else if (choiceP == choiceC) {
+    console.log("It's a draw!");
+  }
+  else {
+    console.log("Computer, you win!!");
+  }
+}
 
 playRound();
 
