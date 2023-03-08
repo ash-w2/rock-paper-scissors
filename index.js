@@ -3,13 +3,13 @@ const choices = ["rock", "paper", "scissors"];
 
 //play single round of Rock, Paper, Scissors
 function playRound() {
-  getComputerChoice();
-  getPlayerChoice();
-  const winner = checkWinner(getPlayerChoice, getComputerChoice);
+  const playerSelection = getPlayerChoice();
+  const computerSelection = getComputerChoice();
+  const winner = checkWinner(playerSelection, computerSelection);
   console.log(winner);
 }
 
-//get choice from computer
+//get random choice from computer
 function getComputerChoice() {
   return choices[Math.floor(Math.random() * 3)];
 }
@@ -35,4 +35,11 @@ function checkWinner(choiceP, choiceC) {
   }
 }
 
-playRound();
+//play 5 rounds
+function game() {
+  for (let r = 0; r < 5; r++) {
+    playRound();
+  }
+}
+
+game();
