@@ -40,6 +40,7 @@ function game() {
   for (let r = 0; r < 5; r++) {
     playRound();
   }
+  window.alert("End of game!");
 }
 
 game();
